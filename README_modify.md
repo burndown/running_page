@@ -345,12 +345,12 @@ Check the [Download your running data](#download-your-running-data).
 #### 4  Run
 
 ```shell
-pnpm develop
+pnpm develop --port 8090
 ```
 
 
 
-Open your browser and visit http://localhost:5173/
+Open your browser and visit http://localhost:8090/
 
 
 
