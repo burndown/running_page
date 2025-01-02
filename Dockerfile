@@ -61,7 +61,7 @@ RUN python3 run_page/gen_svg.py --from-db --title "my running page" --type grid 
 FROM develop-node AS frontend-build
 WORKDIR /root/running_page
 COPY --from=data /root/running_page /root/running_page
-RUN yarn run build
+RUN pnpm run build
 
 FROM nginx:alpine AS web
 COPY --from=frontend-build /root/running_page/dist /usr/share/nginx/html/
