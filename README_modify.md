@@ -151,7 +151,7 @@ You can use this project to build your own running page and show to your friends
 
 
 
-### 1 GitHub Action with Vercel (Recommendation)
+### 1.  GitHub Action with Vercel (Recommendation)
 
 GitHub Action with Vercel  is recommended to be used for this project:
 
@@ -160,11 +160,11 @@ GitHub Action with Vercel  is recommended to be used for this project:
 
 
 
-#### 1. Fork the repo
+#### 1.1  Fork the repo
 
 Fork this repo to fully control it.
 
-#### 2. Change the GitHub workflow
+#### 1.2  Change the GitHub workflow
 
 The env section in the `.github/workflows/run_data_sync.yaml` is all you needs to change.
 
@@ -193,33 +193,33 @@ env:
 
 
 
-#### 3. Add the secrets to the repo
+#### 1.3  Add the secrets to the repo
 
 Check [Github Actions](#github-actions) and [Download your running data](#download-your-running-data)
 
 
 
-#### 4. Customize your pages
+#### 1.4  Customize your pages
 
 To change the Page title, URL, Logo and description, go to  [Custom your page](#custom-your-page) part.
 
-#### 5. Connects to the Vercel
+#### 1.5  Connects to the Vercel
 
 Check [Server](#server)
 
-#### 6. Run the Workflow
+#### 1.6  Run the Workflow
 
 Run the workflow in the Actions - Run Data Sync
 
 
-#### 7. Check the Vercel website
+#### 1.7  Check the Vercel website
 
 Visit the Vercel website. 
 
 Optional, you can add your own domain name to the page.
 
 
-### 2 Docker
+### 2.  Docker
 
 ---
 
@@ -228,7 +228,7 @@ You can use docker to fetch the running data and display it as running page.  Yo
 > [!WARNING]
 > The running data is only fetched during the image building phase. You need to create a crontab to rebuild and re-run the docker image if you want to keep you running page fresh. 
 
-#### 2.1 Clone the repo
+#### 2.1  Clone the repo
 
 ```shell
 git clone https://github.com/yihong0618/running_page.git --depth=1
@@ -236,7 +236,7 @@ git clone https://github.com/yihong0618/running_page.git --depth=1
 
 
 
-#### 2.2 Use Docker Compose to build and run the running page
+#### 2.2  Use Docker Compose to build and run the running page
 
 An example of `docker-compose.yaml` file
 
@@ -274,7 +274,7 @@ Supported app and corresponding args.
 
 
 
-#### 2.3 Create Crontab task to rebuild and re-run 
+#### 2.3  Create Crontab task to rebuild and re-run 
 
 1. create a `rebuild.sh`
 
@@ -310,7 +310,7 @@ Open your browser and visit http://localhost:8090
 
 
 
-### 3 Local
+### 3.  Local
 
 ---
 
@@ -318,7 +318,7 @@ You can run the program locally. Similar as docker, you need to fetch the runnin
 
 
 
-#### 3.1 Clone the repo
+#### 3.1  Clone the repo
 
 ```python
 git clone https://github.com/yihong0618/running_page.git --depth=1
@@ -326,7 +326,7 @@ git clone https://github.com/yihong0618/running_page.git --depth=1
 
 
 
-#### 3.2 Install the requirement
+#### 3.2  Install the requirement
 
 ```shell
 pip3 install -r requirements.txt
@@ -335,11 +335,11 @@ sudo npm install -g corepack && corepack enable && pnpm install
 
 
 
-#### 3.3 Fetch the running data
+#### 3.3  Fetch the running data
 
 Check the [Download your running data](#download-your-running-data).
 
-#### 4. Run
+#### 3.4  Run
 
 ```shell
 pnpm develop
