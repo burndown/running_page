@@ -162,7 +162,7 @@ GitHub Action with Vercel  is recommended to be used for this project:
 
 #### 1. Fork the repo
 
-
+Fork this repo to fully control it.
 
 #### 2. Change the GitHub workflow
 
