@@ -20,7 +20,7 @@ COPY ./pnpm-lock.yaml /root/running_page/pnpm-lock.yaml
 RUN npm config rm proxy&&npm config set registry https://registry.npmjs.org/ \
   &&npm install -g corepack \
   &&corepack enable \
-  &&yarn install
+  &&pnpm install
 
 FROM develop-py AS data
 ARG app
