@@ -163,11 +163,11 @@ GitHub Action with Vercel  is recommended to be used for this project:
 
 
 
-#### 1  Fork the repo
+#### 1.  Fork the repo
 
 Fork this repo to fully control it.
 
-#### 2  Change the GitHub workflow
+#### 2.  Change the GitHub workflow
 
 The env section in the `.github/workflows/run_data_sync.yaml` is all you needs to change.
 
@@ -196,26 +196,26 @@ env:
 
 
 
-#### 3  Add the secrets to the repo
+#### 3.  Add the secrets to the repo
 
 Check [Github Actions](#github-actions) and [Download your running data](#download-your-running-data)
 
 
 
-#### 4  Customize your pages
+#### 4.  Customize your pages
 
 To change the Page title, URL, Logo and description, go to  [Custom your page](#custom-your-page) part.
 
-#### 5  Connects to the Vercel
+#### 5.  Connects to the Vercel
 
 Check [Server](#server)
 
-#### 6  Run the Workflow
+#### 6.  Run the Workflow
 
 Run the workflow in the Actions - Run Data Sync
 
 
-#### 7  Check the Vercel website
+#### 7.  Check the Vercel website
 
 Visit the Vercel website. 
 
@@ -231,7 +231,7 @@ You can use docker to fetch the running data and display it as running page.  Yo
 > [!WARNING]
 > The running data is only fetched during the image building phase. You need to create a crontab to rebuild and re-run the docker image if you want to keep you running page fresh. 
 
-#### 1  Clone the repo
+#### 1.  Clone the repo
 
 ```shell
 git clone https://github.com/yihong0618/running_page.git --depth=1
@@ -239,7 +239,7 @@ git clone https://github.com/yihong0618/running_page.git --depth=1
 
 
 
-#### 2  Use Docker Compose to build and run the running page
+#### 2.  Use Docker Compose to build and run the running page
 
 An example of `docker-compose.yaml` file
 
@@ -277,7 +277,7 @@ Supported app and corresponding args.
 
 
 
-#### 3  Create Crontab task to rebuild and re-run 
+#### 3.  Create Crontab task to rebuild and re-run 
 
 1. create a `rebuild.sh`
 
@@ -321,7 +321,7 @@ You can run the program locally. Similar as docker, you need to fetch the runnin
 
 
 
-#### 1  Clone the repo
+#### 1.  Clone the repo
 
 ```python
 git clone https://github.com/yihong0618/running_page.git --depth=1
@@ -329,7 +329,7 @@ git clone https://github.com/yihong0618/running_page.git --depth=1
 
 
 
-#### 2  Install the requirement
+#### 2.  Install the requirement
 
 ```shell
 pip3 install -r requirements.txt
@@ -338,11 +338,11 @@ sudo npm install -g corepack && corepack enable && pnpm install
 
 
 
-#### 3  Fetch the running data
+#### 3.  Fetch the running data
 
 Check the [Download your running data](#download-your-running-data).
 
-#### 4  Run
+#### 4.  Run
 
 ```shell
 pnpm develop --port 8090
