@@ -195,7 +195,7 @@ env:
 
 #### 3. Add the secrets to the repo
 
-Check [Github Actions](#github-actions)
+Check [Github Actions](#github-actions) and [Download your running data](#download-your-running-data)
 
 
 
