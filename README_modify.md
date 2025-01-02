@@ -209,6 +209,7 @@ Check [Server](#server)
 
 #### 6. Run the Workflow
 
+Run the workflow in the Actions - Run Data Sync
 
 
 #### 7. Check the Vercel website
@@ -216,6 +217,7 @@ Check [Server](#server)
 Visit the Vercel website. 
 
 Optional, you can add your own domain name to the page.
+
 
 ### Docker
 
