@@ -151,7 +151,7 @@ You can use this project to build your own running page and show to your friends
 
 
 
-### GitHub Action with Vercel (Recommendation)
+### 1 GitHub Action with Vercel (Recommendation)
 
 GitHub Action with Vercel  is recommended to be used for this project:
 
@@ -219,17 +219,16 @@ Visit the Vercel website.
 Optional, you can add your own domain name to the page.
 
 
-### Docker
+### 2 Docker
 
 ---
 
 You can use docker to fetch the running data and display it as running page.  Your running data is fetched from source during the docker image building phase. 
 
-__Please note__: The running data is only fetched during the image building phase. You need to create a crontab to rebuild and re-run the docker image if you want to keep you running page fresh. 
+> [!WARNING]
+> The running data is only fetched during the image building phase. You need to create a crontab to rebuild and re-run the docker image if you want to keep you running page fresh. 
 
-
-
-#### 1. Clone the repo
+#### 2.1 Clone the repo
 
 ```shell
 git clone https://github.com/yihong0618/running_page.git --depth=1
@@ -237,7 +236,7 @@ git clone https://github.com/yihong0618/running_page.git --depth=1
 
 
 
-#### 2. Use Docker Compose to build and run the running page
+#### 2.2 Use Docker Compose to build and run the running page
 
 An example of `docker-compose.yaml` file
 
@@ -275,7 +274,7 @@ Supported app and corresponding args.
 
 
 
-#### 3. Create Crontab task to rebuild and re-run 
+#### 2.3 Create Crontab task to rebuild and re-run 
 
 1. create a `rebuild.sh`
 
@@ -311,7 +310,7 @@ Open your browser and visit http://localhost:8090
 
 
 
-### Local
+### 3 Local
 
 ---
 
@@ -319,7 +318,7 @@ You can run the program locally. Similar as docker, you need to fetch the runnin
 
 
 
-#### 1. Clone the repo
+#### 3.1 Clone the repo
 
 ```python
 git clone https://github.com/yihong0618/running_page.git --depth=1
@@ -327,7 +326,7 @@ git clone https://github.com/yihong0618/running_page.git --depth=1
 
 
 
-#### 2. Install the requirement
+#### 3.2 Install the requirement
 
 ```shell
 pip3 install -r requirements.txt
@@ -336,7 +335,7 @@ sudo npm install -g corepack && corepack enable && pnpm install
 
 
 
-#### 3. Fetch the running data
+#### 3.3 Fetch the running data
 
 Check the [Download your running data](#download-your-running-data).
 
