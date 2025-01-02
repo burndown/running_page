@@ -148,6 +148,9 @@ English | [简体中文](https://github.com/yihong0618/running_page/blob/master/
 ## How to use this project
 
 You can use this project to build your own running page and show to your friends.
+- GitHub Action with Vercel (Recommendation)
+- Docker
+- Local
 
 
 
