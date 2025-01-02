@@ -156,7 +156,7 @@ You can use this project to build your own running page and show to your friends
 GitHub Action with Vercel  is recommended to be used for this project:
 
 - Using GitHub Action to fetch your running data daily, generate SVG and push to Vercel
-- Vercel/GitHub Pages display the SVG.
+- Vercel display the SVG.
 
 
 
