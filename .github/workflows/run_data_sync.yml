@@ -30,7 +30,7 @@ env:
   TITLE: Heigao Running
   MIN_GRID_DISTANCE: 5 # change min distance here
   TITLE_GRID: Over 5km Runs # also here
-
+  VITE_MAPBOX_TOKEN: ${{ secrets.VITE_MAPBOX_TOKEN }}
   # IGNORE_BEFORE_SAVING: True # if you want to ignore some data before saving, set this to True
   IGNORE_START_END_RANGE: 10 # Unit meter
   # Dont making this huge, just picking points you needing. https://developers.google.com/maps/documentation/utilities/polylineutility using this tool to making your polyline
