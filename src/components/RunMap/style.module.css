@@ -89,3 +89,13 @@
   background-position: center center;
   opacity: 1;
 }
+
+.mapPlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: var(--color-primary);
+  background-color: var(--color-background);
+}
+

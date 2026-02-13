@@ -67,6 +67,10 @@ const RunMap = ({
   animationTrigger,
 }: IRunMapProps) => {
   const { countries, provinces } = useActivities();
+  const [mapboxToken, setMapboxToken] = useState<string | null>(
+    MAP_TILE_VENDOR === 'mapbox' && MAPBOX_TOKEN ? MAPBOX_TOKEN : null
+  );
+  const loadingMessage = IS_CHINESE ? '地图加载中…' : 'Loading map…';
   const mapRef = useRef<MapRef>(null);
   const [lights, setLights] = useState(PRIVACY_MODE ? false : LIGHTS_ON);
   // layers that should remain visible when lights are off
@@ -129,6 +133,34 @@ const RunMap = ({
       map.once('style.load', handleStyleLoad);
     }
   }, [mapStyle]); // Keep only mapStyle in dependency to prevent excessive re-renders
+
+  useEffect(() => {
+    if (MAP_TILE_VENDOR !== 'mapbox' || MAPBOX_TOKEN) {
+      return;
+    }
+
+    let isMounted = true;
+
+    fetch('/api/mapbox-token')
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Unexpected response: ${response.status}`);
+        }
+        return response.json() as Promise<{ token?: string }>;
+      })
+      .then((data) => {
+        if (isMounted && data?.token) {
+          setMapboxToken(data.token);
+        }
+      })
+      .catch((error) => {
+        console.warn('Unable to load Mapbox token from API route:', error);
+      });
+
+    return () => {
+      isMounted = false;
+    };
+  }, [MAP_TILE_VENDOR, MAPBOX_TOKEN]);
 
   // animation state (single run only)
   const [animatedPoints, setAnimatedPoints] = useState<Coordinate[]>([]);
@@ -361,6 +393,14 @@ const RunMap = ({
     startRouteAnimation();
   }, [isSingleRun, startRouteAnimation]);
 
+  if (MAP_TILE_VENDOR === 'mapbox' && !mapboxToken) {
+    return (
+      <div style={style} className={styles.mapPlaceholder}>
+        <span>{loadingMessage}</span>
+      </div>
+    );
+  }
+
   return (
     <Map
       {...viewState}
@@ -370,7 +410,9 @@ const RunMap = ({
       mapStyle={mapStyle}
       ref={mapRefCallback}
       cooperativeGestures={isTouchDevice()}
-      mapboxAccessToken={MAPBOX_TOKEN}
+      mapboxAccessToken={
+        MAP_TILE_VENDOR === 'mapbox' && mapboxToken ? mapboxToken : undefined
+      }
     >
       <RunMapButtons changeYear={changeYear} thisYear={thisYear} />
       <Source id="data" type="geojson" data={combinedGeoData}>
